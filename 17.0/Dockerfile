@@ -26,6 +26,7 @@ RUN apt-get update && \
         python3-num2words \
         python3-odf \
         python3-pdfminer \
+        python3-pandas \
         python3-pip \
         python3-phonenumbers \
         python3-pyldap \
