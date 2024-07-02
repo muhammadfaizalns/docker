@@ -44,16 +44,18 @@ RUN apt-get update && \
     if [ -z "${TARGETARCH}" ]; then \
         TARGETARCH="$(dpkg --print-architecture)"; \
     fi; \
+    echo "Using target architecture: ${TARGETARCH}" && \
     WKHTMLTOPDF_ARCH=${TARGETARCH} && \
     case ${TARGETARCH} in \
     "amd64") WKHTMLTOPDF_ARCH=amd64 && WKHTMLTOPDF_SHA=1c8f8f222d54517813b450b49dbdfb2baee65bd4  ;; \
     "arm64")  WKHTMLTOPDF_SHA=8a6acb16f5c6c6c6bb7e8165f5d1f0a2b5d4f500  ;; \
     "ppc64le" | "ppc64el") WKHTMLTOPDF_ARCH=ppc64el && WKHTMLTOPDF_SHA=a50b2e7b812df1d36f14c71c54ed4b44db07d1c8  ;; \
-    esac \
-    && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_${WKHTMLTOPDF_ARCH}.deb \
-    && echo ${WKHTMLTOPDF_SHA} wkhtmltox.deb | sha1sum -c - \
-    && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
-    && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
+    *) echo "Unsupported architecture: ${TARGETARCH}" && exit 1 ;; \
+    esac && \
+    curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_${WKHTMLTOPDF_ARCH}.deb && \
+    echo ${WKHTMLTOPDF_SHA} wkhtmltox.deb | sha1sum -c - && \
+    apt-get install -y --no-install-recommends ./wkhtmltox.deb && \
+    rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
 # install latest postgresql-client
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
