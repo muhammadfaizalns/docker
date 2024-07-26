@@ -25,6 +25,7 @@ RUN apt-get update && \
         python3-odf \
         python3-pdfminer \
         python3-pandas \
+        python3-html2text \
         python3-gtts \
         python3-openpyxl \
         python3-pip \
