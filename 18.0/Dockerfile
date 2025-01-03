@@ -22,9 +22,12 @@ RUN apt-get update && \
         libssl-dev \
         node-less \
         npm \
+        python3-gTTS \
         python3-magic \
         python3-num2words \
         python3-odf \
+        python3-openpyxl \
+        python3-pandas \
         python3-pdfminer \
         python3-pip \
         python3-phonenumbers \
@@ -33,6 +36,7 @@ RUN apt-get update && \
         python3-renderpm \
         python3-setuptools \
         python3-slugify \
+        python3-SQLAlchemy \
         python3-vobject \
         python3-watchdog \
         python3-xlrd \
