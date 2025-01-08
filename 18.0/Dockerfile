@@ -42,6 +42,7 @@ RUN apt-get update && \
         python3-gtts \
         python3-pandas \
         python3-sqlalchemy \
+        python3-install lxml-html-clean \
         xz-utils && \
     if [ -z "${TARGETARCH}" ]; then \
         TARGETARCH="$(dpkg --print-architecture)"; \
