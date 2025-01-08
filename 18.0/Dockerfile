@@ -22,12 +22,9 @@ RUN apt-get update && \
         libssl-dev \
         node-less \
         npm \
-        python3-geoip2 \
         python3-magic \
         python3-num2words \
         python3-odf \
-        python3-openpyxl \
-        python3-pandas \
         python3-pdfminer \
         python3-pip \
         python3-phonenumbers \
@@ -40,11 +37,11 @@ RUN apt-get update && \
         python3-watchdog \
         python3-xlrd \
         python3-xlwt \
+        python3-geoip2 \
+        python3-openpyxl \
         python3-gtts \
+        python3-pandas \
         python3-sqlalchemy \
-        python3-dev \
-        python3-full \
-        build-essential \
         xz-utils && \
     if [ -z "${TARGETARCH}" ]; then \
         TARGETARCH="$(dpkg --print-architecture)"; \
