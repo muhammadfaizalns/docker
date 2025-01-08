@@ -23,7 +23,6 @@ RUN apt-get update && \
         node-less \
         npm \
         python3-geoip2 \
-        python3-gTTS \
         python3-magic \
         python3-num2words \
         python3-odf \
@@ -37,7 +36,6 @@ RUN apt-get update && \
         python3-renderpm \
         python3-setuptools \
         python3-slugify \
-        python3-SQLAlchemy \
         python3-vobject \
         python3-watchdog \
         python3-xlrd \
