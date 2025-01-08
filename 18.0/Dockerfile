@@ -43,7 +43,7 @@ RUN apt-get update && \
         python3-pandas \
         python3-sqlalchemy \
         xz-utils && \
-        pip3 install lxml-html-clean && \
+    pip3 install lxml-html-clean && \
     if [ -z "${TARGETARCH}" ]; then \
         TARGETARCH="$(dpkg --print-architecture)"; \
     fi; \
