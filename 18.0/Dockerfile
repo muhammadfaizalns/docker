@@ -42,6 +42,9 @@ RUN apt-get update && \
         python3-xlwt \
         python3-gtts \
         python3-sqlalchemy \
+        python3-dev \
+        python3-full \
+        build-essential \
         xz-utils && \
     if [ -z "${TARGETARCH}" ]; then \
         TARGETARCH="$(dpkg --print-architecture)"; \
