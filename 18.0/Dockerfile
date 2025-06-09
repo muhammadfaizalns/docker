@@ -37,6 +37,7 @@ RUN apt-get update && \
         python3-watchdog \
         python3-xlrd \
         python3-xlwt \
+        python3-qifparse \
         python3-geoip2 \
         python3-openpyxl \
         python3-gtts \
