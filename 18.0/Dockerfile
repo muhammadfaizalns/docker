@@ -36,7 +36,6 @@ RUN apt-get update && \
         python3-vobject \
         python3-watchdog \
         python3-xlrd \
-        python3-qifparse \
         python3-xlwt \
         python3-qifparse \
         python3-geoip2 \
